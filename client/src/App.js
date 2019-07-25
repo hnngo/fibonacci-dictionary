@@ -16,9 +16,9 @@ function App() {
           </p>
           <Link to="/">Home</Link>
           <Link to="/newpage">New Page</Link>
+          <Route exact path="/" component={Fib} />
+          <Route path="/newpage" component={NewPage} />
         </header>
-        <Route exact path="/" component={Fib} />
-        <Route path="/newpage" component={NewPage} />
       </div>
     </Router>
   );
