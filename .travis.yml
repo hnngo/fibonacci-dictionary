@@ -1,0 +1,22 @@
+sudo: required
+services:
+  - docker
+
+before_jnstall:
+  - docker build -t hnngo/client-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true hnngo/client-test npm run test
+
+after_success:
+  - docker build -t hnngo/fib-client ./client
+  - docker build -t hnngo/fib-nginx ./nginx
+  - docker build -t hnngo/fib-server ./server
+  - docker build -t hnngo/fib-worker ./worker
+  
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+
+  - docker push hnngo/fib-client
+  - docker push hnngo/fib-nginx
+  - docker push hnngo/fib-server
+  - docker push hnngo/fib-worker
