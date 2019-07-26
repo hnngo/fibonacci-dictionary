@@ -24,12 +24,14 @@ const Fib = () => {
     });
 
     setIndex("");
+    fetchValues();
+    fetchIndexes();
   }
 
   useEffect(() => {
     fetchValues();
     fetchIndexes();
-  });
+  }, []);
 
   const renderSeenIndexes = () => {
     return seenIndexes.map(({ number }) => number).join(", ");

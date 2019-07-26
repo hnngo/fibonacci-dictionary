@@ -11,7 +11,7 @@ services:
       context: ./nginx
     ports:
       - "8080:80"
-  node-server:
+  api:
     build:
       dockerfile: Dockerfile.dev
       context: ./server
