@@ -20,3 +20,17 @@ after_success:
   - docker push hnngo/fib-nginx
   - docker push hnngo/fib-server
   - docker push hnngo/fib-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "fibonacci-dictionary"
+  env: "FibonacciDictionary-env"
+  bucket_name: "elasticbeanstalk-us-east-2-601657596403"
+  bucket_path: "fibonacci-dictionary"
+  on:
+    branch: master
+  access_key_id:
+    secure: "$AWS_ACCESS_KEY"
+  access_secret_key:
+    secure: "$AWS_SECRET_KEY"
