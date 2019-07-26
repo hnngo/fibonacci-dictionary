@@ -5,25 +5,29 @@
       "Name": "client",
       "Image": "hnngo/fib-client",
       "HostName": "client",
-      "Essential": false
+      "Essential": false,
+      "Memory": 128
     },
     {
       "Name": "server",
       "Image": "hnngo/fib-server",
       "HostName": "api",
-      "Essential": false
+      "Essential": false,
+      "Memory": 128
     },
     {
       "Name": "worker",
       "Image": "hnngo/fib-worker",
       "HostName": "worker",
-      "Essential": false
+      "Essential": false,
+      "Memory": 128
     },
     {
       "Name": "nginx",
       "Image": "hnngo/fib-nginx",
       "HostName": "nginx",
       "Essential": true,
+      "Memory": 128,
       "PortMappings": [
         {
           "HostPort": 80,
