@@ -1,40 +1,40 @@
 {
   "AWSEBDockerrunVersion": 2,
-  "ContainerDefinitions": [
+  "containerDefinitions": [
     {
-      "Name": "client",
-      "Image": "hnngo/fib-client",
-      "HostName": "client",
-      "Essential": false,
-      "Memory": 128
+      "name": "client",
+      "image": "hnngo/fib-client",
+      "hostname": "client",
+      "essential": false,
+      "memory": 128
     },
     {
-      "Name": "server",
-      "Image": "hnngo/fib-server",
-      "HostName": "api",
-      "Essential": false,
-      "Memory": 128
+      "name": "server",
+      "image": "hnngo/fib-server",
+      "hostname": "api",
+      "essential": false,
+      "memory": 128
     },
     {
-      "Name": "worker",
-      "Image": "hnngo/fib-worker",
-      "HostName": "worker",
-      "Essential": false,
-      "Memory": 128
+      "name": "worker",
+      "image": "hnngo/fib-worker",
+      "hostname": "worker",
+      "essential": false,
+      "memory": 128
     },
     {
-      "Name": "nginx",
-      "Image": "hnngo/fib-nginx",
-      "HostName": "nginx",
-      "Essential": true,
-      "Memory": 128,
-      "PortMappings": [
+      "name": "nginx",
+      "image": "hnngo/fib-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
         {
-          "HostPort": 80,
-          "ContainerPort": 80
+          "hostPort": 80,
+          "containerPort": 80
         }
       ],
-      "Links": ["client", "server"]
+      "links": ["client", "server"],
+      "memory": 128
     }
   ]
 }
