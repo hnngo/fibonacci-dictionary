@@ -1,6 +1,6 @@
 # Fibonacci Calculator application with Docker, TravisCI, and AWS
 
-A small project to let user calculate the fibonaci series. 
+A small project to let user calculate the fibonacci series. 
 
 ## Description
 
